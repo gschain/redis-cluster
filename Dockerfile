@@ -14,10 +14,9 @@ RUN set -eux; \
     cd /usr/local/redis-5.0.7; \
     make MALLOC=/usr/local/jemalloc-4.2.1/lib && make install; \
     rm -rf /usr/local/redis-5.0.7;
-COPY redis.conf /data/redis.conf
-RUN mkdir /data
+COPY redis.conf /data/conf/redis.conf
 VOLUME /data
 WORKDIR /data
 EXPOSE 6379
-CMD ["redis-server", "/data/redis.conf"]
+CMD ["redis-server", "/data/conf/redis.conf"]
 #CMD ["/bin/bash"]
