@@ -15,7 +15,7 @@ RUN set -eux; \
     make MALLOC=/usr/local/jemalloc-4.2.1/lib && make install; \
     rm -rf /usr/local/redis-5.0.7; \
 COPY redis.conf /data/redis.conf
-RUN mkdir /data && chown redis:redis /data
+RUN mkdir /data
 VOLUME /data
 WORKDIR /data
 EXPOSE 6379
