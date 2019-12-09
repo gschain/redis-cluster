@@ -13,7 +13,7 @@ RUN set -eux; \
     tar -xzf redis.tar.gz; \
     cd /usr/local/redis-5.0.7; \
     make MALLOC=/usr/local/jemalloc-4.2.1/lib && make install; \
-    rm -rf /usr/local/redis-5.0.7; \
+    rm -rf /usr/local/redis-5.0.7;
 COPY redis.conf /data/redis.conf
 RUN mkdir /data
 VOLUME /data
